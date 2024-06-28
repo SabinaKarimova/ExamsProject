@@ -1,0 +1,158 @@
+<aside>
+  sadas
+  <div class="asideMain">
+    <div class="brandLogo justify-content-start pt-5">
+      <img class="logo" src="../../assets/img/logoWhite.svg" alt="" routerLink="/modules">
+    </div>
+    <div class="sidebarMenu">
+      <!-- <div  [routerLink]="['/modules']" class="back-modules-res">
+        <i class="fa-light fa-arrow-left-to-line  me-1 opacity-75"></i>
+       <span>{{moduleName}}</span>
+      </div> -->
+      <ul class="sideUl">
+        <div class="resLi">
+          <span *ngFor="let item of menuValue">
+            <span *ngIf="item.subMenuExistStatus">
+              <span>
+                <mat-accordion  >
+                  <mat-expansion-panel >
+                    <mat-expansion-panel-header class="accordionMin">
+                      <mat-panel-title>
+                        <mat-list-item >
+                          <div fxLayout="row" class="row subHeader align-items-center" fxLayoutAlign="space-between center">
+                            <div class="col-12 subIconMin">
+                              <img  src="../../assets/icon/stockOperations/{{item.icon}}" alt="">
+                              <a > {{item.value}}</a>
+
+                            </div>
+
+                          </div>
+                        </mat-list-item>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="span" *ngFor="let item2 of menuValue">
+                      <mat-list-item class="subList"  *ngIf="item2.parentId>0 && item.id==item2.parentId"
+                        [routerLink]="item2.link"  routerLinkActive="routerLinkActive">
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                          <a> {{item2.value}}</a>
+                        </div>
+                      </mat-list-item>
+                    </div>
+
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </span>
+            </span>
+            <!-- <span *ngIf="!item.children || item.children.length === 0"> -->
+            <mat-list-item [routerLink]="item.link" routerLinkActive="routerLinkActive"
+              *ngIf="!item.subMenuExistStatus && item.parentId==null ">
+              <div fxLayout="row" class="row align-items-center" fxLayoutAlign="space-between center">
+                <div class="col-12 iconMin">
+                  <img  src="../../assets/icon/stockOperations/{{item.icon}}" alt="">
+                  <a > {{item.value}}</a>
+
+                </div>
+
+              </div>
+            </mat-list-item>
+            <!-- </span> -->
+          </span>
+
+<!--
+          <li  *ngFor="let item of menuValue" [routerLink]="item.link" routerLinkActive="router-link-active" class="d-flex">
+
+            <img src="../../assets/icon/stockOperations/{{item.icon}}" >
+
+            {{item.value}}
+          </li> -->
+        </div>
+      </ul>
+
+    </div>
+  </div>
+</aside>
+<header>
+  <div class="head">
+    <div>
+      <div class="hamburger" id="hamburger-4">
+        <img src="../../assets/icon/hamburger.svg" alt="">
+      </div>
+      <div  [routerLink]="['/modules']" class="back-modules">
+        <img src="../../assets/icon/Line.svg" alt="">
+
+       <span >İmtahan sistemi</span>
+
+
+      </div>
+    </div>
+    <div class="headChild2">
+      <div class="col-lg-12 d-flex notf">
+
+        <div class="avatar d-flex">
+            <!-- <div class=" notf-div">
+            <i class="fa-solid fa-bell" id="notificationLink">
+
+              <div class="notf-count">
+              </div>
+            </i>
+            <div id="notificationContainer">
+              <div class="notf-header">
+                <h3>{{getLangValue('ttl_notification')}}</h3>
+                <span>{{getLangValue('ttl_read')}}</span>
+              </div>
+              <div class="notf-content d-block">
+                <div class="notf-row highlight-notf">
+                  <div>
+                    <h3>Lorem ipsum</h3>
+                    <span>Lorem ipsum dolor sit amet</span>
+                  </div>
+                  <div>
+                    <span>
+                      9:42
+                    </span>
+                  </div>
+                </div>
+                <div class="notf-row">
+                  <div>
+                    <h3>Lorem ipsum</h3>
+                    <span>Lorem ipsum dolor sit amet </span>
+                  </div>
+                  <div>
+                    <span>
+                      9:42
+                    </span>
+                  </div>
+                </div>
+                <div class="notf-row">
+                  <div>
+                    <h3>Lorem ipsum</h3>
+                    <span>Lorem ipsum dolor sit amet</span>
+                  </div>
+                  <div>
+                    <span>
+                      9:42
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="notf-footer">
+                <a href="">
+                  <img src="../../assets/icon/single-window/notf-arrow.svg" alt="">
+                  <span>{{getLangValue('ftr_notfFooter')}}</span>
+                </a>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+<main class="main">
+  <div >
+    <router-outlet></router-outlet>
+  </div>
+</main>
+

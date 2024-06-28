@@ -1,0 +1,195 @@
+.imgwitdh{
+  width: 15%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+}
+// li{
+//   img{
+//     padding: 0px 10px;
+//   }
+// }
+.brandLogo{
+  img{
+    cursor: pointer;
+  }
+}
+li{
+  img{
+    padding: 0px 10px 0px 0px;
+  }
+}
+.avatar{
+  justify-content: end;
+  padding-right: 59px;
+   span{
+    width: 69px;
+
+   }
+}
+::ng-deep .ngx-spinner-overlay {
+  background-color: transparent!important;
+}
+.spinner{
+  background-color: transparent!important;
+}
+@media only screen and (max-width: 768px) {
+
+  .avatar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .avataritem{
+      display: flex;
+      justify-content: end;
+    }
+    span{
+      display: none;
+    }
+  }
+}
+
+mat-accordion {
+  background: transparent;
+  border: none;
+  mat-expansion-panel {
+    box-shadow: none;
+    background: transparent;
+
+    mat-expansion-panel-header {
+      padding: 0;
+      height: 30px;
+    }
+  }
+}
+::ng-deep .mat-expansion-indicator {
+  width: 7% !important;
+  padding: 4px;
+}
+
+.subList {
+  cursor: pointer;
+
+  a {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 5px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #afafaf;
+      border-radius: 100%;
+      left: -15px;
+      top: 28%;
+    }
+  }
+}
+
+::ng-deep .routerLinkActive {
+  a {
+    color: #0D9677 !important ;
+    &::before {
+      background: #0D9677 !important;
+    }
+  }
+}
+.subHeader {
+  width: 13.5pc;
+  .valueMin{
+    padding-left: 20px !important;
+  }
+
+}
+.notSubItem{
+  a{
+    cursor: pointer;
+  }
+}
+::ng-deep .mat-expansion-panel-content {
+  padding-left: 36px !important;
+}
+.w-70{
+  width: 75% !important;
+  margin: auto;
+
+}
+.subIconMinCustom{
+  width: 15% !important;
+  padding-right: 0!important;
+  padding-left: 19px !important;
+}
+::ng-deep .accordionMinToogle{
+.mat-expansion-indicator {
+   display: none;
+}
+}
+@media only screen and (max-width: 1200px) {
+  .notSubItem{
+    a{
+      padding-left: 10px;
+
+    }
+  }
+  .subHeader{
+    width: 151%;
+  }
+  .mat-list-item-content{
+    width: 231px;
+  }
+
+  .asideMain{
+    padding: 0 0px;
+  }
+::ng-deep .mat-expansion-indicator {
+    width: 17% !important;
+    padding: 4px;
+}
+
+}
+.resAsideMenu{
+  .valueMin{
+    // padding-left: 34px!important;
+  }
+  .notSubItem{
+    padding-left: 0!important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .mat-list-item{
+
+    .col-12{
+      a{
+        font-size: 13px!important;
+      }
+    }
+  }
+  .avatar{
+    span{
+      display: none;
+    }
+  }
+}
+
+.avatar{
+  padding: 0;
+
+}
+.mat-list-item{
+  cursor: pointer;
+  .iconMin{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    a{
+      font-size: 16px;
+    }
+  }
+}
+
+.headChild2{
+  .col-lg-12{
+    margin-right: 2.5pc;
+
+  }
+}
