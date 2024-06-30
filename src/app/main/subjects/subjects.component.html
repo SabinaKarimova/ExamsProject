@@ -1,1 +1,120 @@
-<p>subjects works!</p>
+
+<div class="content">
+    <div class="order-header row align-items-center">
+      <div class="col-4 header" >
+        <h1 >Dərslər</h1>
+      </div>
+      <div class="col-8 btnBox">
+        <div class="d-flex justify-content-end">
+  
+        <button class="mx-3"(click)="openDialog()"   >Yeni</button>
+          <img
+          src="../../../../assets/img/ExcelIcon.svg"
+          alt=""
+          class="excelIcon"
+        />
+      </div>
+      </div>
+  
+    </div>
+    <div class="example-container mat-elevation-z8">
+      <form [formGroup]="filterForm" (ngSubmit)="handleFilter()">
+        <table mat-table [dataSource]="dataSource">
+     <!-- statusID :
+     4 -testiqlenmis
+     3 - qaralama
+     2-legv et  -->
+          <ng-container matColumnDef="operation" class="" sticky="true">
+            <th mat-header-cell *matHeaderCellDef> # </th>
+            <td mat-cell *matCellDef="let row;let i=index">
+              <i  style="color: #6E7A78;" class="fa-solid fa-bars"  [matMenuTriggerFor]="menu"></i>
+              <mat-menu #menu="matMenu">
+              
+                <button mat-menu-item (click)="openDialog(row.id,row?.code,row?.name,row?.class,row?.teacherName,row?.teacherSurName)" 
+  
+                ><i class="fa-solid fa-pen me-2" style="color: #6E7A78;"  ></i><span>Redaktə et</span></button>
+                <button mat-menu-item  (click)="openDialog(row.id,row?.code,row?.name,row?.class,row?.teacherName,row?.teacherSurName,true)"
+                 ><i style="color: #6E7A78;"  class="fa-solid fa-eye me-2"></i><span>Bax</span></button>
+  
+                <button mat-menu-item  (click)="deleteSubject(i)"  ><i style="color: #6E7A78;"  class="fa-solid fa-trash me-2"></i>
+                  <span>Sil</span>
+                </button>
+           
+              </mat-menu>
+            </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef class="customWidth">
+              <div class="field">
+                <input type="text" required autocomplete="off" id="code" formControlName="code"
+                  (keyup)="handleKeyUp($event)"
+                  enterkeyhint="done"
+  >
+                <label for="code" title="Dərsin kodu"></label>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.code}}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="customWidth">
+              <div class="field">
+                <input type="text" required autocomplete="off" id="name" formControlName="name"
+                  (keyup)="handleKeyUp($event)"
+                  enterkeyhint="done"
+  >
+                <label for="name" title="Dərsin adı"></label>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="teacherName">
+            <th mat-header-cell *matHeaderCellDef class="customWidth">
+              <div class="field">
+                <input type="text" required autocomplete="off" id="teacherName" formControlName="teacherName"
+                  (keyup)="handleKeyUp($event)"
+                  enterkeyhint="done"
+  >
+                <label for="teacherName" title="Dərs verən müəllimin adı"></label>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.teacherName }} </td>
+          </ng-container>
+          <ng-container matColumnDef="teacherSurName">
+            <th mat-header-cell *matHeaderCellDef class="customWidth">
+              <div class="field">
+                <input type="text" required autocomplete="off" id="teacherSurName" formControlName="teacherSurName"
+                  (keyup)="handleKeyUp($event)"
+                  enterkeyhint="done"
+  >
+                <label for="teacherSurName" title="Dərs verən müəllimin soyadı"></label>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.teacherSurName }} </td>
+          </ng-container>
+          <ng-container matColumnDef="class">
+            <th mat-header-cell *matHeaderCellDef class="customWidth">
+              <div class="field">
+                <input type="text" required autocomplete="off" id="class" formControlName="class"
+                  (keyup)="handleKeyUp($event)"
+                  enterkeyhint="done"
+  >
+                <label for="class" title="Sinifi"></label>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.class}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </form>
+    </div>
+    <nav id="datatablePagination" aria-label="Activity pagination">
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="onChangePage($event)" showFirstLastButtons>
+      </mat-paginator>
+    </nav>
+  </div>
+  

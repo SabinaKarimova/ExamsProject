@@ -1,1 +1,56 @@
-<p>new-subject works!</p>
+
+<div class="container p-2 m-2">
+    <div class="row header">
+      <div class="col-lg-6 modalHeader">Dərs </div>
+      <div class="col-lg-6 text-right" (click)="onNoClick()">X</div>
+    </div>
+      <form action="" [formGroup]="subject">
+     
+        <div class="row">
+          <div class="mt-3 subjectForm" >
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+                <mat-label class="select-label" >Dərsin kodu</mat-label>
+                <input type="text" maxlength="3" required  matInput formControlName="code">
+              </mat-form-field>
+  
+          </div>
+          <div class="mt-3 subjectForm">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Dərsin adı</mat-label>
+              <input type="text" required  maxlength="30" matInput formControlName="name">
+            </mat-form-field>
+  
+          </div>
+          <div class="mt-3 subjectForm">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Sinifi</mat-label>
+              <input type="number"  required  matInput formControlName="class">
+            </mat-form-field>
+  
+          </div>
+          <div class="mt-3 subjectForm">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Dərs verən müəllimin adı</mat-label>
+              <input type="text"  required maxlength="20" matInput formControlName="teacherName">
+            </mat-form-field>
+  
+          </div>
+          <div class="mt-3 subjectForm">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Dərs verən müəllimin soyadı</mat-label>
+              <input type="text"  required maxlength="20" matInput formControlName="teacherSurName">
+            </mat-form-field>
+  
+          </div>
+         
+
+        </div>
+      </form>
+  
+    <div class="btnGroup">
+      <button (click)="onNoClick()" class="btn" >Geri</button>
+      <button (click)="addSubject()" *ngIf="!this.data.view" [disabled]="this.subject.invalid"  >Yadda saxla</button>
+  
+    </div>
+  </div>
+  

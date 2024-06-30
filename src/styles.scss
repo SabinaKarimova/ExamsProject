@@ -705,14 +705,6 @@ input::-webkit-inner-spin-button{
   display: none;
 }
 
-.fa-eye,
-.fa-eye-slash {
-  position: absolute;
-  color: #0D9677;
-  right: 25px;
-  top: 9px;
-}
-
 .even {
   background-color: #dfe6e941;
 }
@@ -1082,3 +1074,6 @@ button:disabled{
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

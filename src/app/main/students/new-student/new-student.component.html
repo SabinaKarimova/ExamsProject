@@ -1,1 +1,48 @@
-<p>new-student works!</p>
+
+<div class="container p-2 m-2">
+    <div class="row header">
+      <div class="col-lg-6 modalHeader">Şagird </div>
+      <div class="col-lg-6 text-right" (click)="onNoClick()">X</div>
+    </div>
+      <form action="" [formGroup]="student">
+     
+        <div class="row">
+          <div class="col-lg-3 mt-3" >
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+                <mat-label class="select-label" >No</mat-label>
+                <input type="number"  required  matInput formControlName="no">
+              </mat-form-field>
+  
+          </div>
+          <div class="col-lg-3 mt-3">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Adı</mat-label>
+              <input type="text" required  maxlength="30" matInput formControlName="name">
+            </mat-form-field>
+  
+          </div>
+          <div class="col-lg-3 mt-3">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Soyadı</mat-label>
+              <input type="text"  required maxlength="30" matInput formControlName="surName">
+            </mat-form-field>
+  
+          </div>
+          <div class="col-lg-3 mt-3">
+            <mat-form-field class="example-full-width" class="select-field" appearance="fill">
+              <mat-label class="select-label" >Sinifi</mat-label>
+              <input type="number"  required  matInput formControlName="class">
+            </mat-form-field>
+  
+          </div>
+
+        </div>
+      </form>
+  
+    <div class="btnGroup">
+      <button (click)="onNoClick()" class="btn" >Geri</button>
+      <button (click)="addStudent(this.student.value)" *ngIf="!this.data.view" [disabled]="this.student.invalid"  >Yadda saxla</button>
+  
+    </div>
+  </div>
+  
