@@ -24,13 +24,13 @@ export class NewSubjectComponent implements OnInit {
     this.MatDialogRef.close();
   }
   addSubject(){
-    debugger
+    
     if (this.subject.invalid) {
       return;
     }
     else{
-      debugger
-      debugger
+      
+      
       if (this.data.id) {
         let newArray=[]
         newArray.push(this.data)

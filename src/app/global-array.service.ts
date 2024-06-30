@@ -26,7 +26,7 @@ export class GlobalArrayService {
   }
   update:boolean=false
   updateStudent(oldElement: any, newElement: any): any {
-    debugger
+    
     for (let index = 0; index < this.StudentData.length; index++) {
       if (this.StudentData[index].id ==newElement.id) {
         this.StudentData[index] = newElement;
@@ -40,7 +40,7 @@ export class GlobalArrayService {
     }
   }
   deleteStudent(index:number){
-    debugger
+    
     this.StudentData.splice(index,1);
 
   }
@@ -56,7 +56,7 @@ export class GlobalArrayService {
   }
   updateSub:boolean=false
   updateSubject(oldElement: any, newElement: any): any {
-    debugger
+    
     for (let index = 0; index < this.SubjectData.length; index++) {
       if (this.SubjectData[index].id ==newElement.id) {
         this.SubjectData[index] = newElement;
@@ -70,7 +70,7 @@ export class GlobalArrayService {
     }
   }
   deleteSubject(index:number){
-    debugger
+    
     this.SubjectData.splice(index,1);
 
   }
@@ -87,7 +87,7 @@ export class GlobalArrayService {
   }
   updateExams:boolean=false
   updateExam(oldElement: any, newElement: any): any {
-    debugger
+    
     for (let index = 0; index < this.ExamData.length; index++) {
       if (this.ExamData[index].id ==newElement.id) {
         this.ExamData[index] = newElement;
@@ -101,7 +101,7 @@ export class GlobalArrayService {
     }
   }
   deleteExam(index:number){
-    debugger
+    
     this.ExamData.splice(index,1);
 
   }

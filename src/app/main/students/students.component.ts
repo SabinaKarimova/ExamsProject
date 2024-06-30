@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { GlobalArrayService } from 'src/app/global-array.service';
+import * as XLSX from 'xlsx'
+import * as FileSaver from 'file-saver'
 
 @Component({
   selector: 'app-students',
@@ -26,15 +28,21 @@ export class StudentsComponent implements OnInit {
   displayedColumns: string[] = ['operation','no', 'name','surName','class'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>(this.StudentData);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  onChangePage(pe: PageEvent) {
-
-  }
+  exportColumnsMapping: { [key: string]: string } = {
+    'no': "No",
+    'name': "Adı",
+    'surName': "Soyadı",
+    'class': "Sinifi"
+  };
 
   ngOnInit(): void {
     this.getStudentArray()
     this.inputs()
   }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
   inputs() {
     this.filterForm = this.formBuilder.group(
       {
@@ -54,10 +62,10 @@ export class StudentsComponent implements OnInit {
     this.StudentData= this.globalArrayService.getStudent();
     this.length=this.StudentData.length
     this.dataSource= new MatTableDataSource<any>(this.StudentData);
-  }
-  handleFilter() {
+    this.dataSource.paginator = this.paginator;
 
   }
+
   deleteStudent(index:number){
 
     this.StudentData.splice(index,1);
@@ -81,4 +89,32 @@ export class StudentsComponent implements OnInit {
       this.getStudentArray()
     });
   }
+  
+  exportToExcel(data: any[], exportColumnsMapping: { [key: string]: string }, filename: string) {
+    const filteredData = data.map(item => {
+      const filteredItem: any = {};
+      Object.keys(exportColumnsMapping).forEach(columnKey => {
+        if (item.hasOwnProperty(columnKey)) {
+          const mappedColumnName = exportColumnsMapping[columnKey];
+          if (mappedColumnName) {
+            filteredItem[mappedColumnName] = item[columnKey];
+          }
+        }
+      });
+      return filteredItem;
+    });
+
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob: Blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+    FileSaver.saveAs(blob, filename + '.xlsx');
+  }
+  excelExport() {
+
+        const data: any[] = this.StudentData
+        this.exportToExcel(data, this.exportColumnsMapping,'Students');
+      }
+
 }

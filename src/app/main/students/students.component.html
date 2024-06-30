@@ -12,13 +12,14 @@
         src="../../../../assets/img/ExcelIcon.svg"
         alt=""
         class="excelIcon"
+        (click)="excelExport()"
       />
     </div>
     </div>
 
   </div>
   <div class="example-container mat-elevation-z8">
-    <form [formGroup]="filterForm" (ngSubmit)="handleFilter()">
+    <form [formGroup]="filterForm" >
       <table mat-table [dataSource]="dataSource">
    <!-- statusID :
    4 -testiqlenmis
@@ -90,7 +91,7 @@
                 (keyup)="handleKeyUp($event)"
                 enterkeyhint="done"
 >
-              <label for="class" title="Sinif"></label>
+              <label for="class" title="Sinifi"></label>
             </div>
           </th>
           <td mat-cell *matCellDef="let element"> {{element.class}} </td>
@@ -101,8 +102,8 @@
     </form>
   </div>
   <nav id="datatablePagination" aria-label="Activity pagination">
-    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-      (page)="onChangePage($event)" showFirstLastButtons>
+    <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    showFirstLastButtons>
     </mat-paginator>
   </nav>
 </div>

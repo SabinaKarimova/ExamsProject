@@ -24,13 +24,13 @@ export class NewStudentComponent implements OnInit {
     this.MatDialogRef.close();
   }
   addStudent(element:any){
-    debugger
+    
     if (this.student.invalid) {
       return;
     }
     else{
-      debugger
-      debugger
+      
+      
       if (this.data.id) {
         let newArray=[]
         newArray.push(this.data)

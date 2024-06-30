@@ -1,8 +1,6 @@
 <aside>
-  sadas
   <div class="asideMain">
     <div class="brandLogo justify-content-start pt-5">
-      <img class="logo" src="../../assets/img/logoWhite.svg" alt="" routerLink="/modules">
     </div>
     <div class="sidebarMenu">
       <!-- <div  [routerLink]="['/modules']" class="back-modules-res">
@@ -48,7 +46,8 @@
               *ngIf="!item.subMenuExistStatus && item.parentId==null ">
               <div fxLayout="row" class="row align-items-center" fxLayoutAlign="space-between center">
                 <div class="col-12 iconMin">
-                  <i class={{item.icon}}></i>                  <a > {{item.value}}</a>
+                  <i class={{item.icon}}></i>           
+                     <a > {{item.value}}</a>
 
                 </div>
 
@@ -57,13 +56,6 @@
             <!-- </span> -->
           </span>
 
-<!--
-          <li  *ngFor="let item of menuValue" [routerLink]="item.link" routerLinkActive="router-link-active" class="d-flex">
-
-            <img src="../../assets/icon/stockOperations/{{item.icon}}" >
-
-            {{item.value}}
-          </li> -->
         </div>
       </ul>
 
@@ -74,75 +66,16 @@
   <div class="head">
     <div>
       <div class="hamburger" id="hamburger-4">
-        <img src="../../assets/icon/hamburger.svg" alt="">
       </div>
-      <div  [routerLink]="['/modules']" class="back-modules">
-        <img src="../../assets/icon/Line.svg" alt="">
-
-       <span >İmtahan sistemi</span>
-
-
+      <div  >
+       <span >İmtahan proqramı</span>
       </div>
     </div>
     <div class="headChild2">
       <div class="col-lg-12 d-flex notf">
 
         <div class="avatar d-flex">
-            <!-- <div class=" notf-div">
-            <i class="fa-solid fa-bell" id="notificationLink">
-
-              <div class="notf-count">
-              </div>
-            </i>
-            <div id="notificationContainer">
-              <div class="notf-header">
-                <h3>{{getLangValue('ttl_notification')}}</h3>
-                <span>{{getLangValue('ttl_read')}}</span>
-              </div>
-              <div class="notf-content d-block">
-                <div class="notf-row highlight-notf">
-                  <div>
-                    <h3>Lorem ipsum</h3>
-                    <span>Lorem ipsum dolor sit amet</span>
-                  </div>
-                  <div>
-                    <span>
-                      9:42
-                    </span>
-                  </div>
-                </div>
-                <div class="notf-row">
-                  <div>
-                    <h3>Lorem ipsum</h3>
-                    <span>Lorem ipsum dolor sit amet </span>
-                  </div>
-                  <div>
-                    <span>
-                      9:42
-                    </span>
-                  </div>
-                </div>
-                <div class="notf-row">
-                  <div>
-                    <h3>Lorem ipsum</h3>
-                    <span>Lorem ipsum dolor sit amet</span>
-                  </div>
-                  <div>
-                    <span>
-                      9:42
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="notf-footer">
-                <a href="">
-                  <img src="../../assets/icon/single-window/notf-arrow.svg" alt="">
-                  <span>{{getLangValue('ftr_notfFooter')}}</span>
-                </a>
-              </div>
-            </div>
-          </div> -->
-
+           
         </div>
       </div>
 

@@ -25,13 +25,13 @@ export class NewExamComponent implements OnInit {
     this.MatDialogRef.close();
   }
   addexam(element:any){
-    debugger
+    
     if (this.exam.invalid) {
       return;
     }
     else{
-      debugger
-      debugger
+      
+      
       if (this.data.id) {
         let newArray=[]
         newArray.push(this.data)

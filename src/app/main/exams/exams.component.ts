@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { GlobalArrayService } from 'src/app/global-array.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import * as XLSX from 'xlsx'
+import * as FileSaver from 'file-saver'
 
 @Component({
   selector: 'app-exams',
@@ -12,13 +14,13 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   styleUrls: ['./exams.component.scss']
 })
 export class ExamsComponent implements OnInit {
-
  
   constructor(
     private formBuilder: FormBuilder,
     public dialog: MatDialog,
     private globalArrayService: GlobalArrayService
   ) { }
+
   length!: number
   pageSize!: number;
   pageSizeOptions: number[] = [10, 20, 50];
@@ -27,6 +29,12 @@ export class ExamsComponent implements OnInit {
   displayedColumns: string[] = ['operation','code', 'no','date','point'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>(this.ExamData);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  exportColumnsMapping: { [key: string]: string } = {
+    'code': "Dərsin kodu",
+    'no': "Şagird No",
+    'date': "İmtahan tarixi",
+    'point': "Qiyməti"
+  };
 
   onChangePage(pe: PageEvent) {
 
@@ -35,6 +43,9 @@ export class ExamsComponent implements OnInit {
   ngOnInit(): void {
     this.getExamArray()
     this.inputs()
+  }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
   inputs() {
     this.filterForm = this.formBuilder.group(
@@ -51,14 +62,14 @@ export class ExamsComponent implements OnInit {
   }
 
   getExamArray() {
-    debugger
+    
     this.ExamData= this.globalArrayService.getExam();
     this.length=this.ExamData.length
     this.dataSource= new MatTableDataSource<any>(this.ExamData);
-  }
-  handleFilter() {
+    this.dataSource.paginator = this.paginator;
 
   }
+  
   deleteExam(index:number){
 
     this.ExamData.splice(index,1);
@@ -69,6 +80,7 @@ export class ExamsComponent implements OnInit {
     if (e.keyCode === 13||e.keyCode===9) {
     const filterValue = (e.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
     }
   }
   openDialog(id?:number,code?:string,no?:number,date?:any,point?:number,view?:boolean) {
@@ -82,4 +94,30 @@ export class ExamsComponent implements OnInit {
       this.getExamArray()
     });
   }
+  exportToExcel(data: any[], exportColumnsMapping: { [key: string]: string }, filename: string) {
+    const filteredData = data.map(item => {
+      const filteredItem: any = {};
+      Object.keys(exportColumnsMapping).forEach(columnKey => {
+        if (item.hasOwnProperty(columnKey)) {
+          const mappedColumnName = exportColumnsMapping[columnKey];
+          if (mappedColumnName) {
+            filteredItem[mappedColumnName] = item[columnKey];
+          }
+        }
+      });
+      return filteredItem;
+    });
+
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob: Blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+    FileSaver.saveAs(blob, filename + '.xlsx');
+  }
+  excelExport() {
+
+        const data: any[] = this.ExamData
+        this.exportToExcel(data, this.exportColumnsMapping,'Exams');
+      }
 }
