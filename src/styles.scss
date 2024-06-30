@@ -281,17 +281,7 @@ form > div > div:nth-child(2) button {
   font-family: "Poppins", sans-serif !important;
 }
 
-.fullHead {
-  width: 100%;
-  margin-left: 0%;
-  transition: all 0.4s;
-}
-
 .mat-input-element:disabled {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-
-.mat-select-disabled .mat-select-value {
   color: rgba(0, 0, 0, 0.6) !important;
 }
 
@@ -315,10 +305,6 @@ form > div > div:nth-child(2) button {
   transition: 0.3s;
 }
 
-.collapseMain {
-  margin-left: 0%;
-}
-
 .brandLogo {
   height: 70px;
   width: 100%;
@@ -326,15 +312,6 @@ form > div > div:nth-child(2) button {
   justify-content: center;
   align-items: center;
 }
-
-.arrowCol {
-  transform: rotate(180deg);
-}
-
-// .brandLogoCol {
-//   margin: 20px !important;
-// }
-
 .sidebarMenu {
   margin-top: 30px;
   color: #ffffff;
@@ -388,17 +365,6 @@ form > div > div:nth-child(2) button {
   font-weight: 500 !important;
   transition: 0.4s !important;
 }
-//fgtrtrtrtrtrtrt
-.router-link-active::before {
-  // content: "";
-  // display: inline-block;
-  // position: absolute;
-  // width: 7px;
-  // margin: 10px 0 0 -12px;
-  // height: 7px;
-  // border-radius: 100%;
-  // background-color: #0D9677 !important;
-}
 .resLi {
   li {
     font-family: Helvetica Neue, sans-serif;
@@ -409,12 +375,7 @@ form > div > div:nth-child(2) button {
     text-align: left;
   }
 }
-.mainUser {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 45%;
-}
+
 .x{
   cursor: pointer;
 }
@@ -485,13 +446,6 @@ form > div > div:nth-child(2) button {
   color: #222;
 }
 
-.order-info h4 {
-  font-weight: 600;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  margin-top: 15px;
-}
-
 .disabled {
   opacity: 0.7;
 }
@@ -507,9 +461,7 @@ input::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
-.addPlusButton{
-  width: 9.33%;
-}
+
 .dialogHeader {
   background-color: #0D9677;
   padding: 5px 20px;
@@ -554,39 +506,8 @@ input::-webkit-inner-spin-button{
   background-color: #0D9677;
   cursor: pointer;
 }
-
-.menus-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menus-header h1 {
-  margin: 0;
-  font-family: Poppins, sans-serif !important;
-}
-
-.menus-header div button {
-  border-radius: 5px;
-  padding: 8px 30px;
-  outline: none;
-  border: none;
-  background-color: #0D9677;
-  color: white;
-  outline: none;
-  border: none;
-}
-
-.r-pass-form {
-  padding: 20px;
-}
-
 .form-group {
   position: relative;
-}
-
-.hidecon {
-  display: none;
 }
 
 .even {
@@ -610,13 +531,6 @@ input::-webkit-inner-spin-button{
     display: none;
   }
 
-  .servicesField {
-    border-bottom: 1px solid #b2bec3;
-    border-top: 1px solid #b2bec3;
-    padding: 20px 0;
-    margin-bottom: 20px;
-  }
-
   .main-form img {
     width: 6%;
   }
@@ -630,22 +544,6 @@ input::-webkit-inner-spin-button{
     width: 0;
     padding: 0;
   }
-
-  .subCat {
-    display: none;
-  }
-
-  .subCatRes {
-    display: block;
-  }
-
-  .resAsideMenu {
-    width: 56%;
-    z-index: 1000;
-    padding: 0 3%;
-    transition: all 0.4s;
-  }
-
   .resHead {
     width: 44%;
     margin-left: 56%;
@@ -716,62 +614,6 @@ input::-webkit-inner-spin-button{
   float: right;
 }
 
-.image-background {
-  position: relative;
-  width: 100%;
-  height: 130px;
-  border-radius: 15px;
-  background: #65B4A2;
-}
-
-.notf-div {
-  position: relative;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
-.notf-div i {
-  font-size: 20px;
-  color: #006801;
-  cursor: pointer;
-  position: relative;
-}
-
-.notf-count {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 0px;
-  right: -1px;
-  border-radius: 100%;
-  background-color: #ef6110;
-  border: 2px solid white;
-}
-
-.image-background::before {
-  content: "";
-  background-image: var(--background);
-  width: 100%;
-  height: 100%;
-  background-size: 160px;
-  display: block;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-position-y: 30px;
-  margin-left: -13px;
-  opacity: 0.3;
-}
-
-.image-border {
-  position: absolute;
-  top: -25px;
-  left: 40px;
-  padding: 12px;
-  border-radius: 22px;
-  background-color: #f5f5f5;
-}
-
 .image {
   display: flex;
   background: #65B4A2;
@@ -781,74 +623,6 @@ input::-webkit-inner-spin-button{
   align-items: center;
   border-radius: 20px;
 
-}
-
-#notificationContainer {
-  display: none;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  overflow: visible;
-  position: absolute;
-  top: 50px;
-  margin-left: -170px;
-  width: 340px;
-  z-index: 2;
-}
-
-.notf-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #dfdfdf;
-  padding: 12px 15px;
-}
-
-.notf-header h3,
-.notf-content h3 {
-  color: black;
-  margin: 0;
-}
-
-.notf-header span,
-.notf-content span {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.notf-header span {
-  text-transform: uppercase;
-  color: #006801;
-}
-
-.notf-row {
-  padding: 20px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #dfdfdf;
-}
-
-.highlight-notf {
-  background: #f8fff8;
-}
-
-.notf-footer {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.notf-footer a {
-  text-decoration: none;
-  color: black;
-}
-
-.notf-footer span {
-  font-size: 16px;
-  font-weight: 400;
-  margin-left: 0.5rem;
 }
 
 .mat-menu-trigger {
@@ -891,55 +665,11 @@ input::-webkit-inner-spin-button{
 .cdk-overlay-pane {
   width: auto!important;
 }
-.cdk-overlay-connected-position-bounding-box{
-  // top: 66px !important;
-  //   left: 85% !important;
-}
-tr{
-  td:first-child{
-    // width: 8%!important;
-  }
-}
-li{
-  .imgwitdh{
-    // padding: 0px 12px;
-  }
-}
+
 .content-header{
   display: flex;
 
   align-items: center;
-}
-
-
-
-.searching{
-  display:flex;
-  align-items:center;
-}
-.resDate {
-  width: 100%;
-  display: flex;
-}
-
-
-
-
-.srchBtn{
-  margin:0 8px;
-  border-radius: 5px;
-  padding: 8px 40px;
-    height: 40px;
-  outline: none;
-  border: none;
-  background-color: #0D9677;
-  color: white;
-
-}
-.srcBtn{
-  img{
-    cursor: pointer;
-  }
 }
 .avatar{
   padding: 0;
@@ -947,15 +677,12 @@ li{
 .mat-row:nth-child(even){
   background-color: rgb(245, 242, 242);
 }
-
 .mat-row:nth-child(odd){
   background-color: #fff;
 }
 button:disabled{
   opacity:0.5
 }
-
-
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
