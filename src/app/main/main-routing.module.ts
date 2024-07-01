@@ -8,7 +8,7 @@ import { NewExamComponent } from './exams/new-exam/new-exam.component';
 import { NewSubjectComponent } from './subjects/new-subject/new-subject.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'student', pathMatch: 'full' },
+  { path: '', redirectTo: 'subject', pathMatch: 'full' },
   { path: 'student', component: StudentsComponent },
   { path: 'exams', component: ExamsComponent },
   { path: 'subject', component: SubjectsComponent },

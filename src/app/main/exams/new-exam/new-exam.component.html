@@ -5,27 +5,27 @@
       <div class="col-lg-6 text-right" (click)="onNoClick()">X</div>
     </div>
       <form action="" [formGroup]="exam">
-     
+
         <div class="row">
             <div class="col-lg-3 mt-3">
             <mat-form-field class="example-full-width" class="select-field" appearance="fill">
               <mat-label class="select-label" >Dərsin kodu</mat-label>
               <input type="text" required  maxlength="3" matInput formControlName="code">
             </mat-form-field>
-  
+
           </div>
           <div class="col-lg-3 mt-3" >
             <mat-form-field class="example-full-width" class="select-field" appearance="fill">
                 <mat-label class="select-label" >Şagird No</mat-label>
                 <input type="number"  required  matInput formControlName="no">
               </mat-form-field>
-  
+
           </div>
-          
+
           <div class="col-lg-3  date  mt-3">
             <mat-form-field class="example-full-width select-field" appearance="fill">
               <mat-label
-  
+
                 class="select-label"
               >İmtahan tarixi </mat-label>
               <input
@@ -46,16 +46,15 @@
               <mat-label class="select-label" >Qiyməti</mat-label>
               <input type="number"  required  matInput formControlName="point">
             </mat-form-field>
-  
+
           </div>
 
         </div>
       </form>
-  
+
     <div class="btnGroup">
       <button (click)="onNoClick()" class="btn" >Geri</button>
-      <button (click)="addexam(this.exam.value)" *ngIf="!this.data.view" [disabled]="this.exam.invalid"  >Yadda saxla</button>
-  
+      <button (click)="addExam()" *ngIf="!this.data.view" [disabled]="this.exam.invalid"  >Yadda saxla</button>
+
     </div>
   </div>
-  

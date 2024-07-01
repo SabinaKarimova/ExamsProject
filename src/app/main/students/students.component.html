@@ -1,6 +1,6 @@
 
 <div class="content">
-  <div class="order-header row align-items-center">
+  <div class="main-header row align-items-center">
     <div class="col-4 header" >
       <h1 >Şagirdlər</h1>
     </div>
@@ -30,8 +30,8 @@
           <td mat-cell *matCellDef="let row;let i=index">
             <i  style="color: #6E7A78;" class="fa-solid fa-bars"  [matMenuTriggerFor]="menu"></i>
             <mat-menu #menu="matMenu">
-            
-              <button mat-menu-item (click)="openDialog(row.id,row?.no,row?.name,row?.surName,row?.class)" 
+
+              <button mat-menu-item (click)="openDialog(row.id,row?.no,row?.name,row?.surName,row?.class)"
 
               ><i class="fa-solid fa-pen me-2" style="color: #6E7A78;"  ></i><span>Redaktə et</span></button>
               <button mat-menu-item  (click)="openDialog(row.id,row?.no,row?.name,row?.surName,row?.class,true)"
@@ -40,7 +40,7 @@
               <button mat-menu-item  (click)="deleteStudent(i)"  ><i style="color: #6E7A78;"  class="fa-solid fa-trash me-2"></i>
                 <span>Sil</span>
               </button>
-         
+
             </mat-menu>
           </td>
         </ng-container>

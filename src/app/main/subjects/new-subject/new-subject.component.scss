@@ -1,7 +1,7 @@
 ::ng-deep .mat-tab-body-content{
     overflow: hidden!important;
   }
-  
+
   .text-right{
     text-align: right;
     cursor: pointer;
@@ -23,7 +23,7 @@
     color: #0D9677;
     margin-right: 10px;
     padding: 6px 40px;
-  
+
   }
   .spinner{
     background-color: transparent!important;
@@ -35,7 +35,7 @@
     display: flex;
     justify-content: end;
     margin-top: 20px;
-  
+
   }
   .delete-div{
     display: flex;
@@ -44,31 +44,27 @@
    button{
     background-color: red;
     border: 1px solid red;
-  
+
    }
-  
+
   }
   .modalHeader{
-  
+
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
   color: #1D1D1D;
-  
-  
+
   }
-  
-  // .ng-touched && .ng-invalid{
-  //   border: 1px solid red;
-  // }
+
   form{
     border: none!important;
   }
   .add{
     border: none!important;
-  
+
    div{
     border: none!important;
    }
@@ -76,7 +72,7 @@
   .select-field{
     width: 100%!important;
   }
-  
+
   ::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex{
     padding: 0 15px!important;
     background-color: white!important;
@@ -84,57 +80,50 @@
     border-radius: 5px!important;
     height: 39px!important;
   }
-  
+
   ::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
     color: #0D9677!important;
   }
-  
+
   ::ng-deep.mat-form-field-infix{
     border-top: 0.4375em solid white!important;
   }
-  
+
   ::ng-deep.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus {
     transform: translateY(-1.3em) scale(0.9)!important;
     width: 90%;
     color: #777!important;
     margin-left: -8px!important;
   }
-  
+
   ::ng-deep.mat-form-field-label-wrapper {
     height: 40px!important;
     overflow: visible!important;
   }
-  
+
   ::ng-deep.mat-form-field-label-wrapper {
     top: -0.25em;
     padding-top: 0.84375em;
   }
-  
+
   ::ng-deep.mat-form-field-appearance-fill .mat-select-arrow-wrapper {
     transform: translateY(0%)!important;
   }
-  
+
   .select-label{
     background-color: white!important;
     padding: 0 5px 0 12px!important;
     margin-left: -10px!important;
   }
-  
+
   ::ng-deep.mat-form-field-underline{
     width: 0!important;
   }
-  
+
   ::ng-deep.mat-placeholder-required.mat-form-field-required-marker{
     display: none!important;
   }
-  
-  .price{
-    width: 60%;
-    border: none;
-    outline: none;
-  }
-  
-  
+
   .form-group input.ng-invalid.ng-touched{
     border-color: red;
   }
@@ -151,14 +140,14 @@
         border: none;
         transition: .2s;
         border: 1px solid #0D9677;
-  
+
         &:hover{
           background-color: #0D9677;
           color: #fff;
           transition: .2s;
         }
       }
-  
+
     }
     .container{
       margin: 0!important;

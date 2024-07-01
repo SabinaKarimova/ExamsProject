@@ -3,19 +3,18 @@
     height: 35px!important;
     font-family: Poppins, sans-serif;
   }
-  
+
   ::ng-deep.mat-menu-item img{
     margin-right: 10px;
   }
   .mat-row:nth-child(even){
   background-color: rgb(245, 242, 242);
   }
-  
+
   .mat-row:nth-child(odd){
   background-color: #fff;
   }
- 
-  
+
   .field{
     margin: 0 5px;
   }
@@ -28,20 +27,18 @@
   .excelIcon{
   height: 36px;
   }
-  .numberTd{
-  text-align: right!important;
-  }
+
   .spinner{
   background-color: transparent!important;
   }
-  .order-header {
+  .main-header {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   }
-  
-  .order-header h1 {
+
+  .main-header h1 {
   margin: 0;
   font-weight: 500;
   font-size: 18px;
@@ -59,23 +56,22 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  
+
   .customWidth{
     width: 135px;
   }
-  
+
   .mat-header-cell {
   padding: 0 !important;
   }
-  
+
   @media only screen and (max-width: 768px){
   th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
     padding-left: 0 !important;
     width: 50px;
   }
   }
-  
-  
+
   br{
   display: none;
   }
@@ -90,7 +86,6 @@
     button{
       margin-left: 0!important;
     }
-  
   }
   }
   }

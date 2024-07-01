@@ -24,14 +24,14 @@ export class NewExamComponent implements OnInit {
   onNoClick() {
     this.MatDialogRef.close();
   }
-  addexam(element:any){
-    
+  addExam(){
+
     if (this.exam.invalid) {
       return;
     }
     else{
-      
-      
+
+
       if (this.data.id) {
         let newArray=[]
         newArray.push(this.data)
@@ -46,7 +46,7 @@ export class NewExamComponent implements OnInit {
         this.globalArrayService.pushExam(this.exam.value);
       this.MatDialogRef.close();
       }
-      
+
         }
   }
   createForm() {
