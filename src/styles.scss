@@ -541,7 +541,7 @@ input::-webkit-inner-spin-button{
   }
 
   .asideMain {
-    width: 0;
+    // width: 0;
     padding: 0;
   }
   .resHead {
@@ -553,7 +553,12 @@ input::-webkit-inner-spin-button{
     font-size: 14px;
     cursor: pointer;
   }
-
+  .resAsideMenu {
+    width: 56%;
+    z-index: 1000;
+    padding: 0 3%;
+    transition: all 0.4s;
+  }
   .router-link-active::before {
     content: "";
     display: inline-block;
@@ -693,4 +698,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
  }
 .fa-bars{
   cursor: pointer;
+}
+.arrowCol {
+  transform: rotate(180deg);
+}
+.collapseMain {
+  margin-left: 0%;
+}
+.fullHead {
+  width: 100%;
+  margin-left: 0%;
+  transition: all 0.4s;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
+
 
 @Component({
   selector: 'app-main',
@@ -16,6 +18,47 @@ export class MainComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    this.collapse()
   }
+  collapse() {
+    debugger
 
+    $('.hamburger').click(function () {
+      debugger
+      $('.hamburger').toggleClass('is-active');
+
+    });
+    if (window.innerWidth < 768) {
+      $('.hamburger').click(function () {
+        $('div.head').toggleClass('fullHead');
+        $('div.asideMain').toggleClass('asideCol');
+        $('.arrow').toggleClass('arrowCol');
+        $('div.iconMin').toggleClass('w-70');
+        $('div.subIconMin').toggleClass('subIconMinCustom');
+        $('div.valueMin').toggleClass('d-none');
+        $('.logo').toggleClass('brandLogoCol');
+        $('main').toggleClass('collapseMain');
+        $('.sideUl').toggleClass('sideUlRes');
+        $('.accordionMin').toggleClass('accordionMinToogle');
+
+      });
+
+
+    }
+    else {
+      $('.hamburger').click(function () {
+        $('div.head').toggleClass('fullHead');
+        $('div.asideMain').toggleClass('asideCol');
+        $('.arrow').toggleClass('arrowCol');
+        $('div.iconMin').toggleClass('w-70');
+        $('div.subIconMin').toggleClass('subIconMinCustom');
+        $('div.valueMin').toggleClass('d-none');
+        $('.logo').toggleClass('brandLogoCol');
+        $('main').toggleClass('collapseMain');
+        $('.sideUl').toggleClass('sideUlRes');
+        $('.accordionMin').toggleClass('accordionMinToogle');
+
+      });
+    }
+  }
 }

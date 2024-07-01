@@ -1,38 +1,69 @@
-.imgwitdh{
-  width: 15%;
-  height: 15%;
-  display: flex;
-  justify-content: center;
+::ng-deep.mat-menu-item {
+  line-height: 35px !important;
+  height: 35px !important;
+  font-family: Poppins, sans-serif;
 }
-// li{
-//   img{
-//     padding: 0px 10px;
-//   }
-// }
-.brandLogo{
-  img{
+
+::ng-deep.mat-menu-item img {
+  margin-right: 10px;
+}
+
+.example-container .mat-table.mat-table {
+  min-width: 1450px;
+}
+
+.field {
+  margin: 0 5px;
+}
+
+.field input {
+  margin-bottom: 0 !important;
+}
+.spinner{
+  background-color: transparent!important;
+}
+::ng-deep .ngx-spinner-overlay {
+  background-color: transparent!important;
+}
+.field label::before {
+  left: 10px;
+  overflow: hidden;
+  max-width: 105px;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customWidth {
+  max-width: 85px;
+}
+::ng-deep .mat-elevation-z8 {
+  box-shadow: none !important;
+  margin-top: 20px;
+}
+
+
+.brandLogo {
+  img {
     cursor: pointer;
   }
 }
-li{
+li {
+  display: flex;
   img{
     padding: 0px 10px 0px 0px;
   }
 }
+
 .avatar{
   justify-content: end;
-  padding-right: 59px;
+  // padding-right: 59px;
    span{
     width: 69px;
 
    }
 }
-::ng-deep .ngx-spinner-overlay {
-  background-color: transparent!important;
-}
-.spinner{
-  background-color: transparent!important;
-}
+
 @media only screen and (max-width: 768px) {
 
   .avatar {
@@ -48,7 +79,6 @@ li{
     }
   }
 }
-
 mat-accordion {
   background: transparent;
   border: none;
@@ -98,7 +128,7 @@ mat-accordion {
 .subHeader {
   width: 13.5pc;
   .valueMin{
-    padding-left: 20px !important;
+    padding-left: 7px !important;
   }
 
 }
@@ -125,6 +155,7 @@ mat-accordion {
    display: none;
 }
 }
+
 @media only screen and (max-width: 1200px) {
   .notSubItem{
     a{
@@ -171,11 +202,6 @@ mat-accordion {
     }
   }
 }
-
-.avatar{
-  padding: 0;
-
-}
 .mat-list-item{
   cursor: pointer;
   .iconMin{
@@ -191,5 +217,16 @@ mat-accordion {
   .col-lg-12{
     margin-right: 2.5pc;
 
+  }
+}
+mat-expansion-panel-header{
+  background-color: transparent!important;
+}
+.resAsideMenu{
+  .valueMin{
+    // padding-left: 34px!important;
+  }
+  .notSubItem{
+    padding-left: 0!important;
   }
 }
